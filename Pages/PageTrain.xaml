@@ -1,0 +1,42 @@
+﻿<Page x:Class="TrainSchedule.Pages.PageTrain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TrainSchedule.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="900"
+      Title="PageTrain"
+      IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <DataGrid Name="DgridTrain"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="0.7*" Header="Пункт назначения"
+                                        Binding="{Binding des}"/>
+                <DataGridTextColumn Width="0.7*" Header="Пункт отправления"
+                                       Binding="{Binding dep_point}"/>
+                <DataGridTextColumn Width="0.5*" Header="Номер поезда"
+                                       Binding="{Binding num}"/>
+                <DataGridTextColumn Width="0.6*" Header="Время отправления"
+                                       Binding="{Binding dep_time}"/>
+                <DataGridTextColumn Width="0.4*" Header="Время в пути"
+                                       Binding="{Binding trav_time}"/>
+                <DataGridTextColumn Width="*" Header="Станции"
+                                       Binding="{Binding station}"/>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnEdit"                                    
+                                    Content="Редактирование"
+                                    Width="150" Height="30"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
