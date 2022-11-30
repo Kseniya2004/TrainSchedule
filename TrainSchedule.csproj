@@ -101,12 +101,47 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PageEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageEditTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PagePesEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PagePessenger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageTrain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\PageEdit.xaml.cs">
+      <DependentUpon>PageEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageEditTicket.xaml.cs">
+      <DependentUpon>PageEditTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePesEdit.xaml.cs">
+      <DependentUpon>PagePesEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagePessenger.xaml.cs">
+      <DependentUpon>PagePessenger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageTicket.xaml.cs">
+      <DependentUpon>PageTicket.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageTrain.xaml.cs">
       <DependentUpon>PageTrain.xaml</DependentUpon>
     </Compile>

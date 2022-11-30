@@ -42,7 +42,7 @@ namespace TrainSchedule
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            frmMain.GoBack();
+             frmMain.Navigate(new Pages.PageTrain());
         }
     }
 }

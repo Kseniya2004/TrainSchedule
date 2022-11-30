@@ -8,47 +8,25 @@
         Title="Главная" Height="450" Width="850">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="2.5*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0"
-              Height="25" Background="#EDEBEB">
-            <MenuItem Header="Файл">
-                <MenuItem Header="В Word"
-                          Name="BtnWord"/>
-                <MenuItem Header="В Excel"
-                          Name="BtnExcel"/>
-                <MenuItem Header="В PDF"
-                          Name="BtnPDF"/>
-                <Separator/>
-                <MenuItem Header="Выйти"
-                          Name="BtnExit"/>
-            </MenuItem>
-            <MenuItem Header="Добавление"
-                      Name="BtnAdd"/>
-            <MenuItem Header="Удаление"
-                      Name="BtnDelete"/>
-            <MenuItem Header="Билеты"
-                      Name="BtnTicket"/>
-        </Menu>
-        <StackPanel Grid.Row="1"
+        <StackPanel Grid.Row="0"
             Orientation="Horizontal"                    
                     Background="#007E86"                   
                     HorizontalAlignment="Stretch">
-            <Image Source="Resources/Logo.png" />
+            <Image Source="Resources/Logo.png" Opacity="1" Visibility="Visible" />
             <StackPanel Orientation="Horizontal" Width="600" >
                 <TextBlock Style="{StaticResource Header}"                   
                    VerticalAlignment="Center"
                    Text="Расписание поездов" 
                    TextAlignment="Center" 
-                   Margin="50 10 50 10"/>
-            <Button Name="BtnBack" Content="Назад"
+                   Margin="100 10 50 10"/>
+                <Button Name="BtnBack" Content="Главная"
                     Click="BtnBack_Click"/>
             </StackPanel>
-            
         </StackPanel>
-        <Frame Grid.Row="2"
+        <Frame Grid.Row="1"
                Name="frmMain"
                NavigationUIVisibility="Hidden"
                ContentRendered="frmMain_ContentRendered">
