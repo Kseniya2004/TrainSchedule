@@ -20,21 +20,17 @@
                     <GradientStop Color="#FF007E86" Offset="0.083"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
-            </Menu.Background>
-            <MenuItem Header="Файл">
-                <MenuItem Header="В Word"
-                          Name="BtnWord" Click="BtnWord1_Click"/>
-                <Separator/>
-                <MenuItem Header="В Excel"
-                          Name="BtnExcel" Click="BtnExcel1_Click"/>
-                <Separator/>
-                <MenuItem Header="В PDF"
-                          Name="BtnPDF" Click="BtnPDF1_Click"/>
-            </MenuItem>
+            </Menu.Background>            
+            <MenuItem Header="Печать"
+                          Name="BtnExcel" Click="BtnExcel_Click"/>                
             <MenuItem Header="Добавление"
                       Name="BtnAdd" Click="BtnAdd1_Click"/>
             <MenuItem Header="Удаление"
-                      Name="BtnDelete" Click="BtnDelete1_Click"/>            
+                      Name="BtnDelete" Click="BtnDelete1_Click"/>
+            <MenuItem Header="Пассажиры"
+                      Name="BtnPessenger" Click="BtnPessenger_Click"/>
+            <MenuItem Header="Расписание"
+                      Name="BtnSchedule" Click="BtnSchedule_Click"/>
         </Menu>
         <DataGrid Name="DgridTicket"
                   AutoGenerateColumns="False"

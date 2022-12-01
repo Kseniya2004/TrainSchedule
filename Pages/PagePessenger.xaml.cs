@@ -25,36 +25,44 @@ namespace TrainSchedule.Pages
         {
             InitializeComponent();
             DgridPes.ItemsSource = Train_scheduleEntities.GetTrain().Pessenger.ToList();
-        }
-
-        private void BtnWord_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnExcel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnPDF_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        }       
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            ClassFrame.frmObj.Navigate(new PagePesEdit(null));
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            var usersForRemoving = DgridPes.SelectedItems.Cast<Pessenger>().ToList();
+            if (MessageBox.Show($"Удалить {usersForRemoving.Count()} пассажиров?", "Внимание!",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                try
+                {
+                    Train_scheduleEntities.GetTrain().Pessenger.RemoveRange(usersForRemoving);
+                    Train_scheduleEntities.GetTrain().SaveChanges();
+                    MessageBox.Show("Данные удалены");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            DgridPes.ItemsSource = Train_scheduleEntities.GetTrain().Pessenger.ToList();
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
+            ClassFrame.frmObj.Navigate(new PagePesEdit((sender as Button).DataContext as Pessenger));
+        }
 
+        private void BtnTicket_Click(object sender, RoutedEventArgs e)
+        {
+            ClassFrame.frmObj.Navigate(new PageTicket());
+        }
+
+        private void BtnSchedule_Click(object sender, RoutedEventArgs e)
+        {
+            ClassFrame.frmObj.Navigate(new PageTrain());
         }
     }
 }

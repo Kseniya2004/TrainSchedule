@@ -11,8 +11,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.5*"/>
             <RowDefinition Height="5*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0"
               Height="25">
@@ -22,15 +23,18 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Menu.Background>
-            <MenuItem Header="Файл">
-                <MenuItem Header="В Word"
-                          Name="BtnWord" Click="BtnWord_Click"/>
+            <MenuItem Header="Функции с данными">
+                <MenuItem Header="По пункту назначения"
+                          Name="BtnWord"/>
                 <Separator/>
-                <MenuItem Header="В Excel"
-                          Name="BtnExcel" Click="BtnExcel_Click"/>
+                <MenuItem Header="Все станции"
+                          />
                 <Separator/>
-                <MenuItem Header="В PDF"
-                          Name="BtnPDF" Click="BtnPDF_Click"/>
+                <MenuItem Header="Кол-во поездов"
+                          />
+                <Separator/>
+                <MenuItem Header="Среднее время в пути"
+                          Name="MIavr" Click="MIavr_Click"/>
             </MenuItem>
             <MenuItem Header="Добавление"
                       Name="BtnAdd" Click="BtnAdd_Click"/>
@@ -69,5 +73,18 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Grid.Row="2" Background="#FF007E86" Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Text="Поиск:" Foreground="White" Margin="5" Height="30" Width="50"/>
+                <TextBox Height="30" Width="100" Margin="5"/>
+            </StackPanel>
+            <StackPanel>
+                <ComboBox Name="CmbAvr" Margin="5" Height="30" Width="100" SelectionChanged="CmbAvr_SelectionChanged"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Среднее время в пути:" Foreground="White" Margin="5" Height="30"/>
+                    <TextBlock Name="txtAvr" Foreground="White" Height="30"/> 
+                </StackPanel>                                                       
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

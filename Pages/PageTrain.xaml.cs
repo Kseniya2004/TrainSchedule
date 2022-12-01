@@ -27,6 +27,14 @@ namespace TrainSchedule.Pages
             //привязка таблицы            
             DgridTrain.ItemsSource = Train_scheduleEntities.GetTrain().Train.ToList();
 
+            CmbAvr.ItemsSource = Train_scheduleEntities.GetTrain().Train.Select(x => x.dep_point).Distinct().ToList();
+            
+        }
+
+        private void MIavr_Click(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show($"Среднее время в пути ", "Среднее время в пути:", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -36,22 +44,7 @@ namespace TrainSchedule.Pages
                 Train_scheduleEntities.GetTrain().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 DgridTrain.ItemsSource = Train_scheduleEntities.GetTrain().Train.ToList();
             }
-        }
-
-        private void BtnWord_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnExcel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnPDF_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        }        
         /// <summary>
         /// Добавление
         /// </summary>
@@ -105,6 +98,12 @@ namespace TrainSchedule.Pages
         private void BtnPas_Click(object sender, RoutedEventArgs e)
         {
             ClassFrame.frmObj.Navigate(new PagePessenger());
+        }      
+
+        private void CmbAvr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string txt = CmbAvr.SelectedValue.ToString();          
+            txtAvr.Text = Train_scheduleEntities.GetTrain().Train.Where(x => x.dep_point == txt).Average(x => x.trav_time).ToString();
         }
     }
 }
