@@ -74,17 +74,22 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="2" Background="#FF007E86" Orientation="Horizontal">
-            <StackPanel>
-                <TextBlock Text="Поиск:" Foreground="White" Margin="5" Height="30" Width="50"/>
-                <TextBox Height="30" Width="100" Margin="5"/>
-            </StackPanel>
-            <StackPanel>
-                <ComboBox Name="CmbAvr" Margin="5" Height="30" Width="100" SelectionChanged="CmbAvr_SelectionChanged"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="5">
+                <TextBlock Text="Поиск:" Foreground="White" Height="30" Width="50"/>
+                <TextBox Name="TxtSearch"  Height="30" Width="100" TextChanged="TxtSearch_TextChanged"/>
+            </StackPanel>            
+                <ComboBox Name="CmbAvr" Margin="10" Height="30" Width="100" SelectionChanged="CmbAvr_SelectionChanged" VerticalAlignment="Top"/>
+            <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Top">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Среднее время в пути:" Foreground="White" Margin="5" Height="30"/>
                     <TextBlock Name="txtAvr" Foreground="White" Height="30"/> 
-                </StackPanel>                                                       
-            </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Количество поездов со станции:" Foreground="White" Margin="5" Height="30"/>
+                    <TextBlock Name="txtCount" Foreground="White" Height="30"/>
+                </StackPanel>
+            </StackPanel>    
+            
         </StackPanel>
     </Grid>
 </Page>

@@ -104,6 +104,19 @@ namespace TrainSchedule.Pages
         {
             string txt = CmbAvr.SelectedValue.ToString();          
             txtAvr.Text = Train_scheduleEntities.GetTrain().Train.Where(x => x.dep_point == txt).Average(x => x.trav_time).ToString();
+            txtCount.Text = Train_scheduleEntities.GetTrain().Train.Where(x => x.dep_point == txt).Count().ToString();
+        }        
+
+        private void TxtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string search = TxtSearch.Text;
+            if (TxtSearch.Text != null)
+            {
+                DgridTrain.ItemsSource = Train_scheduleEntities.GetTrain().Train.
+                    Where(x => x.des.Contains(search)
+                    || x.dep_time.ToString().Contains(search)
+                    || x.num.ToString().Contains(search)).ToList();
+            }
         }
     }
 }
