@@ -22,20 +22,7 @@
                     <GradientStop Color="#FF007E86" Offset="0.083"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
-            </Menu.Background>
-            <MenuItem Header="Функции с данными">
-                <MenuItem Header="По пункту назначения"
-                          Name="BtnWord"/>
-                <Separator/>
-                <MenuItem Header="Все станции"
-                          />
-                <Separator/>
-                <MenuItem Header="Кол-во поездов"
-                          />
-                <Separator/>
-                <MenuItem Header="Среднее время в пути"
-                          Name="MIavr" Click="MIavr_Click"/>
-            </MenuItem>
+            </Menu.Background>            
             <MenuItem Header="Добавление"
                       Name="BtnAdd" Click="BtnAdd_Click"/>
             <MenuItem Header="Удаление"
@@ -61,7 +48,7 @@
                 <DataGridTextColumn Width="0.4*" Header="Время в пути"
                                        Binding="{Binding trav_time}"/>
                 <DataGridTextColumn Width="0.7*" Header="Станции"
-                                       Binding="{Binding station}"/>
+                                       Binding="{Binding stations}"/>
                 <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

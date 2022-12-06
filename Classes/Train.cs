@@ -26,7 +26,7 @@ namespace TrainSchedule.Classes
         public Nullable<int> num { get; set; }
         public Nullable<System.TimeSpan> dep_time { get; set; }
         public Nullable<int> trav_time { get; set; }
-        public string station { get; set; }
+        public string stations { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ticket> Ticket { get; set; }

@@ -36,7 +36,7 @@
                   AutoGenerateColumns="False"
                   IsReadOnly="True"
                   Grid.Row="1">
-            <DataGrid.Columns>                 
+            <DataGrid.Columns>              
                 <DataGridTextColumn Width="*" Header="Цена"
                                        Binding="{Binding StringFormat={}{0:F}, Path=price}"/>
                 <DataGridTextColumn Width="*" Header="Номер поезда"

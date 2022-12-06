@@ -31,12 +31,6 @@ namespace TrainSchedule.Pages
             
         }
 
-        private void MIavr_Click(object sender, RoutedEventArgs e)
-        {
-
-            MessageBox.Show($"Среднее время в пути ", "Среднее время в пути:", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (Visibility == Visibility.Visible)

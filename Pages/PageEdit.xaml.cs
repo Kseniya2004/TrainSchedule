@@ -44,7 +44,7 @@ namespace TrainSchedule.Pages
                 error.AppendLine("Укажите время отправления");
             if (string.IsNullOrWhiteSpace(Train.trav_time.ToString()))
                 error.AppendLine("Укажите время в пути");
-            if (string.IsNullOrWhiteSpace(Train.station))
+            if (string.IsNullOrWhiteSpace(Train.stations))
                 error.AppendLine("Укажите станции");
             if (error.Length > 0)
             {
