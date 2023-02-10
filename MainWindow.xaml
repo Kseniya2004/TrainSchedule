@@ -19,7 +19,7 @@
             <StackPanel Orientation="Horizontal" Width="600" >
                 <TextBlock Style="{StaticResource Header}"                   
                    VerticalAlignment="Center"
-                   Text="Расписание поездов" 
+                   Text="Расписание электропоездов" 
                    TextAlignment="Center" 
                    Margin="100 10 50 10"/>
                 <Button Name="BtnBack" Content="Назад"
