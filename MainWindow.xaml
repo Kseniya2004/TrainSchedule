@@ -23,7 +23,7 @@
                    TextAlignment="Center" 
                    Margin="100 10 50 10"/>
                 <Button Name="BtnBack" Content="Назад"
-                    Click="BtnBack_Click"/>
+                    Click="BtnBack_Click" Width="80"/>
             </StackPanel>
         </StackPanel>
         <Frame Grid.Row="1"
